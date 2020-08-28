@@ -1,25 +1,106 @@
-## Laravel PHP Framework
+# Laravel project Swagger
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+[![N|Henry](https://image4.owler.com/logo/gohenry_owler_20181119_120021_large.png)](https://about.me/henrycv)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+An example of Swagger on Laravel 4.2
+Generate interactive OpenAPI documentation for your RESTful API using doctrine annotations.
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+### Source:
+[![zircote/swagger-php](https://github.githubassets.com/favicons/favicon.png)](https://github.com/zircote/swagger-php)
+[![Medium](https://cdn-images-1.medium.com/fit/c/60/60/1*8I-HPL0bfoIzGied-dzOvA.png)](https://medium.com/@tatianaensslin/how-to-add-swagger-ui-to-php-server-code-f1610c01dc03) 
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Swagger is a tool that allows you to use annotations to generate stellar API documentation from existing code 
 
-## Official Documentation
+> The overriding design goal for Markdown's
+> formatting syntax is to make it as readable
+> as possible. The idea is that a
+> Markdown-formatted document should be
+> publishable as-is, as plain text, without
+> looking like it's been marked up with tags
+> or formatting instructions.
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
 
-### Contributing To Laravel
+Here are the steps you can expect to follow in order to install swagger to your PHP server code.
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+* Download Swagger-Php Using Composer
+* Add Annotations to Generate Documentation
+* Generate Swagger JSON File
+* Download Swagger-UI Package to your Project
+* Connect Swagger-UI To Your Code
+### Tech
 
-### License
+Dillinger uses a number of open source projects to work properly:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+* [Docker](https://docs.docker.com/get-started/) - Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. 
+* [Laravel 4.2](https://laravel.com/docs/4.2/installation) - PHP framework.
+* [Composer PHP](https://getcomposer.org/) - A Dependency Manager for PHP.
+* [Swagger-PHP](https://zircote.github.io/swagger-php) - Generate interactive OpenAPI documentation for your RESTful API using doctrine annotations.
+
+### Installation
+
+Dillinger requires [Docker](https://docs.docker.com/get-docker/) to run.
+
+Clone project from Github:
+
+```sh
+$ git clone https://github.com/henrycv/laravel-4.2-swagger-ui.git
+$ cd laravel-4.2-swagger-ui.git
+```
+
+Start the Docker container
+
+```sh
+$ docker-compose up
+```
+
+Enter to the PHP container
+
+```sh
+$ docker exec -it swagger-php5 sh
+```
+
+Scan and reload the Swagger JSON file
+
+```sh
+$ ./vendor/zircote/swagger-php/bin/swagger -o /var/www/pro-laravel-4-2/swagger.json
+```
+
+Navigate to http://localhost/api/v2/doc on you local environment.
+
+### Todos
+
+ - Add Authentication and Authorization
+ - Write Tests
+ - Add documentation
+
+License
+----
+
+MIT
+
+
+**Free Software, Hell Yeah!**
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+   [dill]: <https://github.com/joemccann/dillinger>
+   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
+   [john gruber]: <http://daringfireball.net>
+   [df1]: <http://daringfireball.net/projects/markdown/>
+   [markdown-it]: <https://github.com/markdown-it/markdown-it>
+   [Ace Editor]: <http://ace.ajax.org>
+   [node.js]: <http://nodejs.org>
+   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+   [jQuery]: <http://jquery.com>
+   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
+   [express]: <http://expressjs.com>
+   [AngularJS]: <http://angularjs.org>
+   [Gulp]: <http://gulpjs.com>
+
+   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
+   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
+   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
+   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
+   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
+   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
