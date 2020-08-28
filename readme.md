@@ -9,6 +9,8 @@ Generate interactive OpenAPI documentation for your RESTful API using doctrine a
 [![zircote/swagger-php](https://github.githubassets.com/favicons/favicon.png)](https://github.com/zircote/swagger-php)
 [![Medium](https://cdn-images-1.medium.com/fit/c/60/60/1*8I-HPL0bfoIzGied-dzOvA.png)](https://medium.com/@tatianaensslin/how-to-add-swagger-ui-to-php-server-code-f1610c01dc03) 
 
+### Summary
+
 Here are the steps you can expect to follow in order to install swagger to your PHP server code.
 
 * Download Swagger-Php Using Composer
