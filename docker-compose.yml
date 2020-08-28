@@ -1,0 +1,30 @@
+version: '3.7'
+services: 
+
+  swagger-php5:
+    build:
+      context: .
+      dockerfile: ./.docker/php-5/Dockerfile
+    container_name: swagger-php5
+    image: swagger-php5
+    restart: on-failure
+    working_dir: /var/www/pro-laravel-4-2
+    volumes:
+      - .:/var/www/pro-laravel-4-2
+    expose:
+    - "9000"
+  
+  swagger-nginx:
+    build:
+      context: .
+      dockerfile: .docker/nginx-1.16/Dockerfile
+    image: swagger-nginx
+    container_name: swagger-nginx
+    restart: on-failure
+    working_dir: /var/www/pro-laravel-4-2
+    volumes:
+      - .:/var/www/pro-laravel-4-2
+      - ./.docker/nginx-1.16/conf.d:/etc/nginx/conf.d
+    ports:
+      - "80:80"
+      - "443:443"
