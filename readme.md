@@ -18,16 +18,17 @@ Here are the steps you can expect to follow in order to install swagger to your 
 * Connect Swagger-UI To Your Code
 ### Tech
 
-Dillinger uses a number of open source projects to work properly:
+This project uses a number of open source projects to work properly:
 
 * [Docker](https://docs.docker.com/get-started/) - Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. 
+* [Docker Compose](https://docs.docker.com/compose/) - Compose is a tool for defining and running multi-container Docker applications. 
 * [Laravel 4.2](https://laravel.com/docs/4.2/installation) - PHP framework.
 * [Composer PHP](https://getcomposer.org/) - A Dependency Manager for PHP.
 * [Swagger-PHP](https://zircote.github.io/swagger-php) - Generate interactive OpenAPI documentation for your RESTful API using doctrine annotations.
 
 ### Installation
 
-Dillinger requires [Docker](https://docs.docker.com/get-docker/) to run.
+This project requires [Docker](https://docs.docker.com/get-docker/) to run.
 
 Clone project from Github:
 
