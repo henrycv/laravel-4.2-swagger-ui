@@ -9,18 +9,6 @@ Generate interactive OpenAPI documentation for your RESTful API using doctrine a
 [![zircote/swagger-php](https://github.githubassets.com/favicons/favicon.png)](https://github.com/zircote/swagger-php)
 [![Medium](https://cdn-images-1.medium.com/fit/c/60/60/1*8I-HPL0bfoIzGied-dzOvA.png)](https://medium.com/@tatianaensslin/how-to-add-swagger-ui-to-php-server-code-f1610c01dc03) 
 
-Swagger is a tool that allows you to use annotations to generate stellar API documentation from existing code 
-
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
-
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
-
 Here are the steps you can expect to follow in order to install swagger to your PHP server code.
 
 * Download Swagger-Php Using Composer
