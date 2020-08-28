@@ -1,36 +1,79 @@
 <?php
 
-use OpenApi\Annotations as OA;
-
 /**
- * @OA\Info(title="Search API", version="1.0.0")
+ * @SWG\Swagger(
+ *     basePath="/api/v2",
+ *     host="localhost",
+ *     schemes={"http"},
+ *     produces={"application/json"},
+ *     consumes={"application/json"},
+ *     @SWG\Info(
+ *         version="1.0.0",
+ *         title="Swagger Test",
+ *         description="A sample API that uses a SwaggerController as an example to demonstrate features in the swagger-2.0 specification",
+ *         termsOfService="http://swagger.io/terms/",
+ *         @SWG\Contact(name="Swagger API Team"),
+ *         @SWG\License(name="MIT")
+ *     ),
+ *     @SWG\Definition(
+ *         definition="ErrorModel",
+ *         type="object",
+ *         required={"code", "message"},
+ *         @SWG\Property(
+ *             property="code",
+ *             type="integer",
+ *             format="int32"
+ *         ),
+ *         @SWG\Property(
+ *             property="message",
+ *             type="string"
+ *         )
+ *     )
+ * )
+ * 
+ * 
  */
 class SwaggerController extends \BaseController
 {
 
 	/**
-	 * @OA\Post(
-	 *     path="/search",
-	 *     summary="Returns most accurate search result object",
-	 *     description="Search for an object, if found return it!",
-	 *     @OA\RequestBody(
-	 *         description="Client side search object",
+	 * @SWG\Get(
+	 *     path="/api/v2/doc",
+	 *     summary="Finds Pets by status",
+	 *     description="Multiple status values can be provided with comma separated strings",
+	 *     operationId="findPetsByStatus",
+	 *     produces={"application/xml", "application/json"},
+	 *     tags={"pet"},
+	 *     @SWG\Parameter(
+	 *         name="status",
+	 *         in="query",
+	 *         description="Status values that need to be considered for filter",
 	 *         required=true,
-	 *         @OA\MediaType(
-	 *             mediaType="application/json",                 
-	 *         @OA\Schema(ref="#/components/schemas/SearchObject")
-	 *         )
+	 *         type="array",
+	 *         @SWG\Items(
+	 *             type="string",
+	 *             enum={"available", "pending", "sold"},
+	 *             default="available"
+	 *         ),
+	 *         collectionFormat="multi"
 	 *     ),
-	 *     @OA\Response(
+	 *     @SWG\Response(
 	 *         response=200,
-	 *         description="Success",
-	 *     @OA\Schema(ref="#/components/schemas/SearchResultObject)   
-	 *     ), 
-	 *     @OA\Response(
-	 *         response=404,
-	 *         description="Could Not Find Resource"
-	 *     )   
+	 *         description="successful operation",
+	 *         @SWG\Schema(
+	 *             type="array",
+	 *             @SWG\Items(ref="#/definitions/Pet")
+	 *         ),
+	 *     ),
+	 *     @SWG\Response(
+	 *         response="400",
+	 *         description="Invalid status value",
+	 *     ),
+	 *     security={
+	 *       {"petstore_auth": {"write:pets", "read:pets"}}
+	 *     }
 	 * )
+	 * 
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
@@ -38,7 +81,7 @@ class SwaggerController extends \BaseController
 	public function index()
 	{
 		return View::make('swagger.index', [
-			'swaggerFilePath' => app_path() . 'swagger.json'
+			'swaggerFilePath' => public_path() . '/swagger-uiswagger.json'
 		]);
 	}
 

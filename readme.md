@@ -51,10 +51,10 @@ Enter to the PHP container
 $ docker exec -it swagger-php5 sh
 ```
 
-Scan and reload the Swagger JSON file
+Scan and reload the Swagger JSON file. Excluding vendor/zircode/Examples, which requests to http://petstore.swagger.io
 
 ```sh
-$ ./vendor/zircote/swagger-php/bin/swagger -o ./public/swagger-ui/swagger.json
+$ ./vendor/zircote/swagger-php/bin/swagger --exclude zircote -o public/swagger-ui/swagger.json
 ```
 
 Navigate to http://localhost/api/v2/doc on you local environment.

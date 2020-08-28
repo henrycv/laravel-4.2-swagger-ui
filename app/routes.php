@@ -11,4 +11,5 @@
 |
 */
 
+Route::get('/', 'HomeController@showWelcome');
 Route::get('/api/v2/doc', 'SwaggerController@index');
