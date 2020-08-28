@@ -34,7 +34,7 @@ Clone project from Github:
 
 ```sh
 $ git clone https://github.com/henrycv/laravel-4.2-swagger-ui.git
-$ cd laravel-4.2-swagger-ui.git
+$ cd laravel-4.2-swagger-ui
 ```
 
 Start the Docker container
